@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: cloud-stream-processor-demo
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: microservice-config-server
+      profile: base
+  rabbitmq:
+    host: 129.0.98.31 #yxkh测试机
+    port: 5672
+    username: admin
+    password: admin
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://129.0.98.31:8761/eureka/,http://129.0.97.23:8761/eureka/   
+  instance:
+    prefer-ip-address: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+feign:
+  hystrix:
+    enabled: true
+

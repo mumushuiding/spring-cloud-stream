@@ -1,0 +1,10 @@
+server:
+  port: 9002
+spring:
+  cloud:
+    stream:
+      bindings:
+        inputTest: 
+          destination: person
+        outputTest: 
+          destination: test

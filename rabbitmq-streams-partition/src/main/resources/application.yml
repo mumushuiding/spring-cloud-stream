@@ -1,0 +1,12 @@
+spring:
+      cloud:
+        stream:
+          bindings:
+            output:
+              destination: partitioned.destination
+              producer:
+               
+                partition-key-expression: headers['partitionKey']
+                partition-count: 2
+                required-groups:
+                - myGroup
